@@ -22,13 +22,14 @@ from django.urls import path
 # View abaixo apenas para teste (pode ser apagada)
 
 from django.http import HttpResponse
-
+from django.urls import include
 def test(request):
     return HttpResponse("hello world")
     
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', test)
+    path('', test),
+    path('api/', include('authentication.urls')),
 ]
 
 if settings.DEBUG:
