@@ -2,7 +2,7 @@
 
 set -e
 
-while ! nc -z $POSTGRES_HOST $POSTGRES_PORT; do
+while ! nc -z -w 1 $POSTGRES_HOST $POSTGRES_PORT; do
   echo "🟡 Waiting for Postgres Database Startup ($POSTGRES_HOST $POSTGRES_PORT) ..."
   sleep 2
 done
