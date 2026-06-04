@@ -30,6 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', test),
     path('api/', include('authentication.urls')),
+    path('api/',include('tasks.urls'))
 ]
 
 if settings.DEBUG:
